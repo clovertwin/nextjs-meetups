@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   client.close();
   return {
     // fallback false means all paths are defined, true means dynamic
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
